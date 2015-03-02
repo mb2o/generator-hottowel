@@ -7,12 +7,16 @@
 
     /* @ngInject */
     function htWidgetHeader() {
-        //Usage:
-        //<div ht-widget-header title="vm.map.title"></div>
+        // Usage:
+        // <div ht-widget-header title="vm.map.title">
+        //     <span><i class="glyphicon glyphicon-edit"></i></span>
+        // </div>
         // Creates:
         // <div ht-widget-header=""
         //      title="Movie"
-        //      allow-collapse="true" </div>
+        //      allow-collapse="true">
+        //     <span><i class="glyphicon glyphicon-edit"></i></span>
+        // </div>
         var directive = {
             scope: {
                 'title': '@',
@@ -21,7 +25,8 @@
                 'allowCollapse': '@'
             },
             templateUrl: 'app/widgets/widget-header.html',
-            restrict: 'EA'
+            restrict: 'EA',
+            transclude: true
         };
         return directive;
     }
